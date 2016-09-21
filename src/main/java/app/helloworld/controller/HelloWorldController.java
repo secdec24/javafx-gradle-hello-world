@@ -17,4 +17,14 @@ public class HelloWorldController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {}
+
+    @FXML
+    private void displayHelloWorld() {
+        label.setText("Hello World");
+    }
+
+    @FXML
+    private void clearHelloWorld() {
+        label.setText("");
+    }
 }
