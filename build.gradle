@@ -2,8 +2,9 @@ group 'app.helloworld'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply from: "http://dl.bintray.com/content/shemnon/javafx-gradle/8.1.1/javafx.plugin"
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -11,4 +12,8 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+javafx {
+    mainClass = 'app.helloworld.HelloWorld'
 }
