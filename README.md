@@ -83,9 +83,17 @@ The same problem arises when adding an `fx:id` or a function call to an UI objec
 
 To actually build the project with Gradle, it is easier to use a JavaFX Gradle plugin such as [Danno Ferrin's](https://bitbucket.org/shemnon/javafx-gradle/) or [FibreFox's](https://github.com/FibreFoX/javafx-gradle-plugin). I used the former for this example because it was the first one I found but it is not being maintained anymore so the latter is probably a better option.
 
-The plugin can be used by adding `apply from: "http://dl.bintray.com/content/shemnon/javafx-gradle/8.1.1/javafx.plugin"` to the [build.gradle](https://github.com/GerardoPrada/javafx-gradle-hello-world/blob/master/build.gradle) file.
+The plugin can be used by adding `apply from: "http://dl.bintray.com/content/shemnon/javafx-gradle/8.1.1/javafx.plugin"` to the [build.gradle](https://github.com/GerardoPrada/javafx-gradle-hello-world/blob/master/build.gradle) file created by IntelliJ when starting a new Gradle project.
 
 After adding this line, the Gradle tasks under `Tasks > build` should now show some JavaFX specific tasks. See the [Gradle documentation](https://docs.gradle.org/current/userguide/java_plugin.html) for information on what the tasks do (not including the JavaFX specific tasks).
+
+Additionally, since my main class is in `src/main/java/app/helloworld/HelloWorld.java`, I added the following to `build.gradle`:
+
+```
+javafx {
+    mainClass = 'app.helloworld.HelloWorld'
+}
+```
 
 
 ## Disclaimer
