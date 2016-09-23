@@ -81,11 +81,19 @@ The same problem arises when adding an `fx:id` or a function call to an UI objec
 
 ## JavaFX Gradle plugin
 
-To actually build the project with Gradle, it is easier to use a JavaFX Gradle plugin such as [Danno Ferrin's](https://bitbucket.org/shemnon/javafx-gradle/) or [FibreFox's](https://github.com/FibreFoX/javafx-gradle-plugin). I used the former for this example because it was the first one I found but it is not being maintained anymore so the latter is probably a better option.
+To actually build the project with Gradle, it is easier to use a JavaFX Gradle plugin such as [Danno Ferrin's aka shemnon](https://bitbucket.org/shemnon/javafx-gradle/) or [FibreFoX's](https://github.com/FibreFoX/javafx-gradle-plugin). This Hello World example originally used shemnon's plugin. However, since it is no longer being maintained, I have updated the project's `build.gradle` to use  FibreFoX's instead. I have kept the instructions for shemnon's plugin in case someone is still interested in using it.
+
+Information on what each Gradle task does (not including JavaFX specific tasks) can be found in the [Gradle documentation](https://docs.gradle.org/current/userguide/java_plugin.html).
+
+#### FibreFoX Plugin (recommended)
+
+The README for FibreFoX's plugin is very detailed and complete. For this example, I used the [minimal setup of `build.gradle`](https://github.com/FibreFoX/javafx-gradle-plugin#minimal-setup-of-buildgradle). The [Gradle Tasks](https://github.com/FibreFoX/javafx-gradle-plugin#gradle-tasks) section also has a helpful description of each of the JavaFX specific tasks.
+
+#### shemnon Plugin
 
 The plugin can be used by adding `apply from: "http://dl.bintray.com/content/shemnon/javafx-gradle/8.1.1/javafx.plugin"` to the [build.gradle](https://github.com/GerardoPrada/javafx-gradle-hello-world/blob/master/build.gradle) file created by IntelliJ when starting a new Gradle project.
 
-After adding this line, the Gradle tasks under `Tasks > build` should now show some JavaFX specific tasks. See the [Gradle documentation](https://docs.gradle.org/current/userguide/java_plugin.html) for information on what the tasks do (not including the JavaFX specific tasks).
+After adding this line, the Gradle tasks under `Tasks > build` should now show some JavaFX specific tasks.
 
 Additionally, since my main class is in `src/main/java/app/helloworld/HelloWorld.java`, I added the following to `build.gradle`:
 
